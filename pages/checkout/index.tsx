@@ -72,7 +72,7 @@ export default function Checkout() {
                         <tbody>
                             {
                                 optimizedCartContracts.map((contract, idx) => (
-                                    <tr>
+                                    <tr key={'contract-id-'+idx}>
                                         <th>{idx+1}</th> 
                                         <td>{contract.name}</td> 
                                         <td>${contract.value}</td> 
