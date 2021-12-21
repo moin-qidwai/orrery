@@ -89,7 +89,7 @@ export default function Checkout() {
                 </div>
                 <div className="divider">Optimization Strategies</div> 
                 <div>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 grid-cols-1">
                         <div className="card text-center shadow-2xl lg:card-side bg-primary text-primary-content">
                             <div className="card-body">
                                 <p>Credit Default Swap</p> 
