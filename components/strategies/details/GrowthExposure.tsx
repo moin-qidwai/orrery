@@ -30,7 +30,7 @@ export function GrowthExposure() {
                                     <td>${asset.low}</td> 
                                     <td>${asset.high}</td> 
                                     <td>${asset.quantity}</td>
-                                    <td><a href={asset.additionalInfo} target="_blank" className="link link-primary">Additional Details</a></td>
+                                    <td><a href={asset.additionalInfo} target="_blank"  rel="noreferrer" className="link link-primary">Additional Details</a></td>
                                     <td><button className="btn btn-xs btn-link btn-accent" >Select</button></td>
                                 </tr>
                             ))
