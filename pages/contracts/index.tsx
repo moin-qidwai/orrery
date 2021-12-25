@@ -70,7 +70,7 @@ export default function Contracts() {
                     ))}
                 </div>
             </div>
-            { (cart.size > 0) ? <Link href="/checkout"><button className="sticky btn btn-primary z-20 bottom-20 left-[47%]">Optimize Basket</button></Link>: null }
+            { (cart.size > 0) ? <Link href="/optimizer"><button className="sticky btn btn-primary z-20 bottom-20 left-[47%]">Optimize Basket</button></Link>: null }
         </div>
     )
 }
