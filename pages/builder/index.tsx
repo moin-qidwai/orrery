@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { useRecoilValue, useRecoilState } from "recoil";
 import { underlyingVariablesState } from "../../atoms/variables";
 import { 
@@ -69,8 +67,9 @@ export default function Builder() {
             <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 xl:gap-x-8">
                     <div className="w-full">
-                        <Link href="/builder#contracts-modal"><button className="w-full btn btn-wide btn-primary">Select Contracts</button></Link>
-                        <div id="contracts-modal" className="modal">
+                        <label htmlFor="contracts-modal" className="w-full btn btn-wide modal-button">Select Contracts</label> 
+                        <input type="checkbox" id="contracts-modal" className="modal-toggle" /> 
+                        <div className="modal">
                             <div className="modal-box">
                                 {
                                     contracts.map(contract => (
@@ -86,7 +85,7 @@ export default function Builder() {
                                 }
                                 
                                 <div className="modal-action">
-                                    <Link href="/builder#"><button className="btn">Done</button></Link>
+                                    <label htmlFor="contracts-modal" className="btn">Done</label> 
                                 </div>
                             </div>
                         </div>
