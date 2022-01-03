@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useRecoilValue } from "recoil";
 import { finalizedCartState } from "../../selectors/cart";
 
@@ -26,7 +28,9 @@ export default function Optimizer() {
                 
                 <div className="divider">Custom Structure</div>
                 <div className="flex justify-center">
-                    <button className="btn btn-xs w-3/6 btn-link btn-accent">Build Your Own Strategy</button>
+                    <Link href="/builder">
+                        <button className="btn btn-xs w-3/6 btn-link btn-accent">Build Your Own Strategy</button>
+                    </Link>
                 </div>
             </div>
             <Randomized />
