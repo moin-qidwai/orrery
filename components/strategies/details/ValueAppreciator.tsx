@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 import { valueAppreciatorRandomizedState } from "../../../selectors/strategies";
 
 export function ValueAppreciator() {
-    const cost = useRecoilValue(valueAppreciatorRandomizedState)
+    const cost = useRecoilValue(valueAppreciatorRandomizedState);
     return (
         <div>
             The value appreciator provides exposure to the increase in value of the underlying standardized contracts.

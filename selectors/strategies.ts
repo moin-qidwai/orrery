@@ -1,6 +1,20 @@
 import { selector } from "recoil";
 import { randomizeIterationState } from "../atoms/randomize";
-import { valueAppreciatorState } from "../atoms/strategies";
+import { riskFreeRateState } from "../atoms/rate";
+import { valueAppreciatorState, alternativeContractsState } from "../atoms/strategies";
+
+export const alternativeContractsRandomizedState = selector({
+    key: "alternativeContractsRandomizedState",
+    get: ({ get }) => {
+        const originalContracts = get(alternativeContractsState);
+        const rate = get(riskFreeRateState);
+
+        const contractsWithRiskAdjustedProfit = originalContracts.map((originalContract) => ({ ...originalContract, profit: 
+            Math.floor(((originalContract.value - originalContract.cost)/originalContract.cost - rate)*10000)/100 }));
+
+        return contractsWithRiskAdjustedProfit;
+    }
+}) 
 
 export const valueAppreciatorRandomizedState = selector({
     key: "valueAppreciatorRandomizedState",

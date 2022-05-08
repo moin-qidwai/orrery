@@ -27,7 +27,7 @@ export default function Strategies() {
                             {implementation.title}
                         </div> 
                         <div className="collapse-content"> 
-                            <implementation.Strategy/>
+                            { expandedStrategyId === implementation.id ? <implementation.Strategy/> : null }
                         </div>
                     </div> 
                 ))

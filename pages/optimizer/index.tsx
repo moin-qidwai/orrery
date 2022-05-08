@@ -7,6 +7,7 @@ import Randomized from '../../components/randomized';
 import Strategies from '../../components/strategies';
 import CartContractsTable from '../../components/cart/contracts';
 import CartMetrics from '../../components/cart/metrics';
+import RiskFreeRateListener from '../../components/rate';
 
 export default function Optimizer() {
     const optimizedCartContracts = useRecoilValue(finalizedCartState);
@@ -23,7 +24,7 @@ export default function Optimizer() {
                 <div className="divider">Selected Contracts</div> 
                 <CartContractsTable />
                 
-                <div className="divider">Derivatives And Optimization Strategies</div> 
+                <div className="divider">Derivatives And Optimization Strategies</div>
                 <Strategies />
                 
                 <div className="divider">Custom Structure</div>
@@ -34,6 +35,7 @@ export default function Optimizer() {
                 </div>
             </div>
             <Randomized />
+            <RiskFreeRateListener />
         </div>
     )
 }

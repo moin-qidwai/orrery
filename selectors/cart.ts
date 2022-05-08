@@ -27,7 +27,7 @@ export const randomizedCartState = selector({
         const randomizedCart = cartedContracts.map(contract => {
             const multiplier = randomIntFromInterval(5, 25)/1000;
             const sign = randomIntFromInterval(-1, 1);
-            var updatedCost = Math.round((sign > 0 ? contract.cost * (1+multiplier) : contract.cost * (1-multiplier))*100)/100;
+            let updatedCost = Math.round((sign > 0 ? contract.cost * (1+multiplier) : contract.cost * (1-multiplier))*100)/100;
             updatedCost = updatedCost > contract.value * 0.98 ? Math.round((contract.value * 0.98)*100)/100 : updatedCost;
             const diff = Math.round((((updatedCost - contract.cost)/contract.cost)*100)*1000)/1000;
             return { ...contract, cost: updatedCost, diff: diff };
